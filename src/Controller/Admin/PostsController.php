@@ -56,8 +56,14 @@ class PostsController extends AppController
     {
         $this->viewBuilder()->setTemplate('form');
 
+        // TODO
+        $associated = [];
+        foreach ($this->loadModel()->associations()->getIterator() as $association) {
+            $associated[] = $association->getName();
+        }
+
         $post = $this->loadModel()->get($id, [
-            'contain' => []
+            'contain' => $associated
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post = $this->loadModel()->patchEntity($post, $this->request->getData());
