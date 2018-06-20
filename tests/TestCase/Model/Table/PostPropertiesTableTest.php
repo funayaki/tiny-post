@@ -81,4 +81,9 @@ class PostPropertiesTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    public function testQuoting()
+    {
+        $this->markTestIncomplete();
+    }
 }

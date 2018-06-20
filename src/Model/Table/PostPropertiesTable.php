@@ -1,6 +1,9 @@
 <?php
 namespace TinyPost\Model\Table;
 
+use ArrayObject;
+use Cake\Datasource\EntityInterface;
+use Cake\Event\Event;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
@@ -87,5 +90,15 @@ class PostPropertiesTable extends Table
         $rules->add($rules->existsIn(['post_id'], 'Posts'));
 
         return $rules;
+    }
+
+    public function beforeSave(Event $event, EntityInterface $entity, ArrayObject $options)
+    {
+        $this->getConnection()->getDriver()->enableAutoQuoting(true);
+    }
+
+    public function afterSave(Event $event, EntityInterface $entity, ArrayObject $options)
+    {
+        $this->getConnection()->getDriver()->enableAutoQuoting(false);
     }
 }
