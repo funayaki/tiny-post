@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class AddPostProperties extends AbstractMigration
+class CreatePostProperties extends AbstractMigration
 {
     public function up()
     {
