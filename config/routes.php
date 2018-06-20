@@ -5,8 +5,12 @@ use Cake\Routing\Route\DashedRoute;
 
 Router::plugin(
     'TinyPost',
-    ['path' => '/tiny-post'],
+    ['path' => '/'],
     function (RouteBuilder $routes) {
-        $routes->fallbacks(DashedRoute::class);
+        $routes->prefix('admin', function (RouteBuilder $routes) {
+            $routes->scope('/tiny-posts', [], function (RouteBuilder $routes) {
+                $routes->fallbacks();
+            });
+        });
     }
 );
