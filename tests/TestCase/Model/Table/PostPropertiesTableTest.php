@@ -84,6 +84,11 @@ class PostPropertiesTableTest extends TestCase
 
     public function testQuoting()
     {
-        $this->markTestIncomplete();
+        $property = $this->PostProperties->newEntity();
+        $property->key = 'viewable';
+        $property->value = 1;
+
+        $success = (bool)$this->PostProperties->save($property);
+        $this->assertTrue($success);
     }
 }
