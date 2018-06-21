@@ -92,11 +92,21 @@ class PostPropertiesTable extends Table
         return $rules;
     }
 
+    /**
+     * @param Event $event
+     * @param EntityInterface $entity
+     * @param ArrayObject $options
+     */
     public function beforeSave(Event $event, EntityInterface $entity, ArrayObject $options)
     {
         $this->getConnection()->getDriver()->enableAutoQuoting(true);
     }
 
+    /**
+     * @param Event $event
+     * @param EntityInterface $entity
+     * @param ArrayObject $options
+     */
     public function afterSave(Event $event, EntityInterface $entity, ArrayObject $options)
     {
         $this->getConnection()->getDriver()->enableAutoQuoting(false);
