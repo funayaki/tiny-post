@@ -92,6 +92,12 @@ class PostsTable extends Table
             ->allowEmpty('deleted');
 
         $validator
+            ->scalar('state')
+            ->maxLength('state', 100)
+            ->requirePresence('slug', 'create')
+            ->notEmpty('slug');
+
+        $validator
             ->integer('created_by')
             ->allowEmpty('created_by');
 
