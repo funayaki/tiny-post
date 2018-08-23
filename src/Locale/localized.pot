@@ -1,0 +1,66 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-08-23 17:19+0900\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/Admin/PostsController.php:39;71
+msgid "The {0} has been saved."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:39;43;71;75;92;94
+msgid "post"
+msgstr ""
+
+#: Controller/Admin/PostsController.php:43;75
+msgid "The {0} could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:92
+msgid "The {0} has been deleted."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:94
+msgid "The {0} could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Admin/Posts/form.ctp:10
+#: Template/Admin/Posts/index.ctp:10
+msgid "Posts"
+msgstr ""
+
+#: Template/Admin/Posts/form.ctp:13
+#: Template/Admin/Posts/index.ctp:52
+msgid "Edit"
+msgstr ""
+
+#: Template/Admin/Posts/form.ctp:17
+msgid "Add"
+msgstr ""
+
+#: Template/Admin/Posts/form.ctp:39
+msgid "Save"
+msgstr ""
+
+#: Template/Admin/Posts/index.ctp:31
+msgid "Actions"
+msgstr ""
+
+#: Template/Admin/Posts/index.ctp:53
+msgid "Delete"
+msgstr ""
+
+#: Template/Admin/Posts/index.ctp:53
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+

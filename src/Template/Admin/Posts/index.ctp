@@ -7,17 +7,10 @@
 $this->extend('Cirici/AdminLTE./Common/index');
 
 $this->Breadcrumbs
-    ->add(__d('funayaki', 'Posts'), ['action' => 'index']);
+    ->add(__d('localized', 'Posts'), ['action' => 'index']);
 
 $this->start('page-numbers');
 echo $this->Paginator->numbers();
-$this->end();
-
-$this->append('header-actions');
-echo $this->Html->link(__d('funayaki', 'New Post'),
-    ['action' => 'add'],
-    ['class' => 'btn btn-default pull-right']
-);
 $this->end();
 ?>
 
@@ -35,7 +28,7 @@ $this->end();
     <th><?= $this->Paginator->sort('modified') ?></th>
     <th><?= $this->Paginator->sort('created_by') ?></th>
     <th><?= $this->Paginator->sort('modified_by') ?></th>
-    <th><?= __d('funayaki', 'Actions') ?></th>
+    <th><?= __d('localized', 'Actions') ?></th>
 </tr>
 </thead>
 <?php $this->end(); ?>
@@ -56,8 +49,8 @@ $this->end();
         <td><?= $this->Number->format($post->created_by) ?></td>
         <td><?= $this->Number->format($post->modified_by) ?></td>
         <td class="actions" style="white-space:nowrap">
-            <?= $this->Html->link(__d('funayaki', 'Edit'), ['action' => 'edit', $post->id], ['class' => 'btn btn-default btn-xs']) ?>
-            <?= $this->Form->postLink(__d('funayaki', 'Delete'), ['action' => 'delete', $post->id], ['confirm' => __d('funayaki', 'Are you sure you want to delete # {0}?', $post->id), 'class' => 'btn btn-danger btn-xs']) ?>
+            <?= $this->Html->link(__d('localized', 'Edit'), ['action' => 'edit', $post->id], ['class' => 'btn btn-default btn-xs']) ?>
+            <?= $this->Form->postLink(__d('localized', 'Delete'), ['action' => 'delete', $post->id], ['confirm' => __d('localized', 'Are you sure you want to delete # {0}?', $post->id), 'class' => 'btn btn-danger btn-xs']) ?>
         </td>
     </tr>
 <?php endforeach; ?>

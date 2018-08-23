@@ -7,14 +7,14 @@
 $this->extend('Cirici/AdminLTE./Common/form');
 
 $this->Breadcrumbs
-    ->add(__d('funayaki', 'Posts'), ['action' => 'index']);
+    ->add(__d('localized', 'Posts'), ['action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {
-    $this->Breadcrumbs->add(__d('funayaki', 'Edit'), $this->request->getRequestTarget());
+    $this->Breadcrumbs->add(__d('localized', 'Edit'), $this->request->getRequestTarget());
 }
 
 if ($this->request->params['action'] == 'add') {
-    $this->Breadcrumbs->add(__d('funayaki', 'Add'), $this->request->getRequestTarget());
+    $this->Breadcrumbs->add(__d('localized', 'Add'), $this->request->getRequestTarget());
 }
 
 $this->assign('form-start', $this->Form->create($post, [
@@ -36,7 +36,7 @@ echo $this->Form->control('modified_by');
 $this->end();
 
 $this->start('form-button');
-echo $this->Form->button(__d('funayaki', 'Submit'));
+echo $this->Form->button(__d('localized', 'Save'));
 $this->end();
 
 $this->assign('form-end', $this->Form->end());
