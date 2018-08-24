@@ -6,6 +6,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use TinyPost\Model\Entity\LocalizedAliasAwareInterface;
 
 /**
  * Posts Model
@@ -20,7 +21,7 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class PostsTable extends Table
+class PostsTable extends Table implements LocalizedAliasAwareInterface
 {
 
     /**
@@ -136,5 +137,13 @@ class PostsTable extends Table
                 $this->getAlias() . '.deleted >' => (new Time())->format('Y-m-d H:i:s'),
             ]
         ]);
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getLocalizedAlias()
+    {
+        return __d('localized', 'Post');
     }
 }

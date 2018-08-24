@@ -36,11 +36,11 @@ class PostsController extends AppController
         if ($this->request->is('post')) {
             $post = $this->loadModel()->patchEntity($post, $this->request->getData());
             if ($this->loadModel()->save($post)) {
-                $this->Flash->success(__d('localized', 'The {0} has been saved.', [__d('localized', 'post')]));
+                $this->Flash->success(__d('localized', 'The {0} has been saved.', $this->loadModel()->getLocalizedAlias()));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__d('localized', 'The {0} could not be saved. Please, try again.', [__d('localized', 'post')]));
+            $this->Flash->error(__d('localized', 'The {0} could not be saved. Please, try again.', $this->loadModel()->getLocalizedAlias()));
         }
         $this->set(compact('post'));
     }
@@ -68,11 +68,11 @@ class PostsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post = $this->loadModel()->patchEntity($post, $this->request->getData());
             if ($this->loadModel()->save($post)) {
-                $this->Flash->success(__d('localized', 'The {0} has been saved.', [__d('localized', 'post')]));
+                $this->Flash->success(__d('localized', 'The {0} has been saved.', $this->loadModel()->getLocalizedAlias()));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__d('localized', 'The {0} could not be saved. Please, try again.', [__d('localized', 'post')]));
+            $this->Flash->error(__d('localized', 'The {0} could not be saved. Please, try again.', $this->loadModel()->getLocalizedAlias()));
         }
         $this->set(compact('post'));
     }
@@ -89,9 +89,9 @@ class PostsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $post = $this->loadModel()->get($id);
         if ($this->loadModel()->delete($post)) {
-            $this->Flash->success(__d('localized', 'The {0} has been deleted.', [__d('localized', 'post')]));
+            $this->Flash->success(__d('localized', 'The {0} has been deleted.', $this->loadModel()->getLocalizedAlias()));
         } else {
-            $this->Flash->error(__d('localized', 'The {0} could not be deleted. Please, try again.', [__d('localized', 'post')]));
+            $this->Flash->error(__d('localized', 'The {0} could not be deleted. Please, try again.', $this->loadModel()->getLocalizedAlias()));
         }
 
         return $this->redirect(['action' => 'index']);
